@@ -8,15 +8,6 @@ if (!ARGV[0])
   stocks = gets.chomp.strip.split(",")
 end
 
-=begin
-Take the stocks provided as the argument and find the best day to buy and sell.
-
-Keep in mind that you can't sell until you buy. 
-
-1) calculate the difference between each number and everything after it.
-
-
-=end
 def pick_stocks(array_of_stocks)
   differences = []
   array_of_stocks.each_with_index do |current_price, current_day|
