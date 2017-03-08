@@ -1,6 +1,12 @@
-stocks = [3,0,3,5,10]
+stocks = ARGV[0].strip.split(",") unless ARGV[0] == nil
+puts stocks.to_s
+
 picked_stocks = [0,0,0]
 
+if (!ARGV[0])
+  puts "List the stock prices in order of day(eg: 16,17,20,19,30) "
+  stocks = gets.chomp.strip.split(",")
+end
 
 =begin
 Take the stocks provided as the argument and find the best day to buy and sell.
@@ -23,7 +29,6 @@ def pick_stocks(array_of_stocks)
     end
   end
   differences_sorted = differences.sort_by(&:last)
-  puts differences_sorted.last.to_s
   return differences_sorted.last
 end
 
